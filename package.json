@@ -1,0 +1,38 @@
+{
+	"name": "datacakra-fe",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"engines": {
+		"node": ">=22.11.0"
+	},
+	"packageManager": "pnpm@9.13.2",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"lint": "eslint .",
+		"preview": "vite preview",
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+			"biome check --write --no-errors-on-unmatched"
+		]
+	},
+	"dependencies": {
+		"@tailwindcss/vite": "^4.1.5",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"tailwindcss": "^4.1.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/react": "^19.1.2",
+		"@types/react-dom": "^19.1.2",
+		"@vitejs/plugin-react-swc": "^3.9.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.5.2",
+		"typescript": "~5.8.3",
+		"vite": "^6.3.5"
+	}
+}
