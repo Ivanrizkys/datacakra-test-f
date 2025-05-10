@@ -47,7 +47,7 @@ export function Login() {
 					toast("Login Successful", {
 						description: "Welcome back! You have successfully logged in.",
 					});
-					navigate("/article");
+					navigate("/dashboard/article");
 				},
 				onError: (error) => {
 					toast.error("Login Failed", {

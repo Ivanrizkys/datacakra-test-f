@@ -50,7 +50,7 @@ export function Register() {
 					toast("Register Successful", {
 						description: "Welcome! You have successfully registered.",
 					});
-					navigate("/article");
+					navigate("/dashboard/article");
 				},
 				onError: (error) => {
 					toast.error("Register Failed", {
