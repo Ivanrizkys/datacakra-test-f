@@ -69,6 +69,7 @@ export default function ArticleUpdate() {
 	}, [article]);
 
 	const onDrop = (acceptedFiles: File[]) => {
+		console.log(acceptedFiles);
 		setImagePreview(URL.createObjectURL(acceptedFiles[0]));
 		setValue("image", acceptedFiles[0], { shouldValidate: true });
 	};
@@ -219,6 +220,11 @@ export default function ArticleUpdate() {
 						)}
 					</div>
 				)}
+				{errors.image && (
+					<p role="alert" className="-mt-4 text-destructive text-center">
+						{errors.image.message}
+					</p>
+				)}
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
 					<fieldset className="grid gap-2 auto-rows-min">
 						<Label htmlFor="title">Title</Label>
@@ -258,13 +264,13 @@ export default function ArticleUpdate() {
 											className="w-full"
 											aria-invalid={!!errors.category}
 										>
-											<SelectValue placeholder="Select category" />
+											<SelectValue />
 										</SelectTrigger>
 										<SelectContent>
 											{categories?.data?.map((category) => (
 												<SelectItem
 													key={category.documentId}
-													value={category.documentId}
+													value={String(category.id)}
 												>
 													{category?.name}
 												</SelectItem>
