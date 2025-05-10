@@ -1,54 +1,85 @@
-# React + TypeScript + Vite
+# Article Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This is article management dashboard build with React - Typesctript and ShadcnUI. Created to follow the recruitment process at Datacakra.
 
-Currently, two official plugins are available:
+![Application screenshot](https://res.cloudinary.com/draaoe7rc/image/upload/v1746885721/test/45e3a83e-1c26-44a2-a02c-0dd340638528.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<div align="center">
+<a href="https://">Live Preview</a>
+</div>
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Login
+- Register
+- Article List
+- Article Detail
+- Delete Article (Single & Bulk)
+- Update Article
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Requirements
+
+- Biome [see installation guide](https://marketplace.visualstudio.com/items?itemName=biomejs.biome)
+- Node `20.11.1`
+- Pnpm `9.12.1`
+- \*If you have Prettier or EsLint installed in your code editor, please disable it
+
+## Installation
+
+### Step 1: Clone Repository
+
+```bash
+git clone http://codehub.gps.id/webapps/subscription/frontend-new-v2.git
+cd frontend-new-v2
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Step 2: Install Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+pnpm install
 ```
+
+### Step 3: Configuration
+
+1. Copy the `.env.example` file to `.env`
+   ```bash
+   cp .env.example .env
+   ```
+2. Edit the `.env` file and adjust it to your environment configuration:
+   ```
+   VITE_BASE_API_URL=your-base-api-key
+   ...
+   ```
+
+### Step 4: Run the Application
+
+```bash
+pnpm dev
+```
+
+The application will run at `http://localhost:3000`
+
+## Project Structure
+
+```
+src/
+├── components/        # UI component in aplication
+│   ├── ui/            # The most basic and reusable UI component installed from ShadcnUI
+│   ├── common/        # A composite component made up of ui or other components
+│   ├── layout/        # A component that manages the overall structure of the page UI
+├── config/            # Library configuration
+├── global/            # Global state
+├── hooks/             # Custom hooks
+├── libs/              # Utilities, functions, or modules
+├── pages/             # Application page
+├── providers/         # React context providers or third-party providers
+├── routes/            # Application routing management
+├── services/          # API service
+├── test/              # Global testing configurations 
+├── types/             # Type declarations
+```
+
+## Test
+
+This project using vitest and RTL to testing purpose. You can run test file using `pnpm test` or `pnpm test:ui`
