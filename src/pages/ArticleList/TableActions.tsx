@@ -11,7 +11,6 @@ import type { Article } from "@/types/article";
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
 import { useQueryClient } from "@tanstack/react-query";
 import type { Row } from "@tanstack/react-table";
-import { Loader2 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
 import { toast } from "sonner";
@@ -24,8 +23,7 @@ export function ArticleTableActions({ row }: ArticleTableActionsProps) {
 	const [dropdownOpen, setDropdownOpen] = useState(false);
 
 	const queryClient = useQueryClient();
-	const { mutate: doDeleteArticle, isPending: isPendingDeleteArticle } =
-		useDeleteArticleMutation();
+	const { mutate: doDeleteArticle } = useDeleteArticleMutation();
 
 	const handleDeleteArticle = () => {
 		toast("Article Deleted In Progress", {
@@ -72,11 +70,7 @@ export function ArticleTableActions({ row }: ArticleTableActionsProps) {
 				</Link>
 				<DropdownMenuItem onClick={handleDeleteArticle}>
 					Delete
-					{isPendingDeleteArticle ? (
-						<Loader2 className="w-4 h-4 animate-spin" />
-					) : (
-						<DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
-					)}
+					<DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
 				</DropdownMenuItem>
 			</DropdownMenuContent>
 		</DropdownMenu>

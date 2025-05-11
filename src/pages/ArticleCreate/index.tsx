@@ -193,7 +193,7 @@ export default function ArticleCreate() {
 					<fieldset className="grid gap-2 auto-rows-min">
 						<Label id="category">Category</Label>
 						{isPendingCategories && !categories ? (
-							<Input disabled className="mt-2 disabled:cursor-not-allowed" />
+							<Input disabled className="disabled:cursor-not-allowed" />
 						) : (
 							<Controller
 								name="category"

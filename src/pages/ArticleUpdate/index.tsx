@@ -69,7 +69,6 @@ export default function ArticleUpdate() {
 	}, [article]);
 
 	const onDrop = (acceptedFiles: File[]) => {
-		console.log(acceptedFiles);
 		setImagePreview(URL.createObjectURL(acceptedFiles[0]));
 		setValue("image", acceptedFiles[0], { shouldValidate: true });
 	};
@@ -248,38 +247,34 @@ export default function ArticleUpdate() {
 					</fieldset>
 					<fieldset className="grid gap-2 auto-rows-min">
 						<Label id="category">Category</Label>
-						{isPendingCategories && !categories ? (
-							<Input disabled className="mt-2 disabled:cursor-not-allowed" />
-						) : (
-							<Controller
-								name="category"
-								control={control}
-								rules={{ required: "Please select a category!" }}
-								render={({ field }) => (
-									<Select
-										onValueChange={field.onChange}
-										defaultValue={field.value}
+						<Controller
+							name="category"
+							control={control}
+							rules={{ required: "Please select a category!" }}
+							render={({ field }) => (
+								<Select
+									onValueChange={field.onChange}
+									defaultValue={field.value}
+								>
+									<SelectTrigger
+										className="w-full"
+										aria-invalid={!!errors.category}
 									>
-										<SelectTrigger
-											className="w-full"
-											aria-invalid={!!errors.category}
-										>
-											<SelectValue />
-										</SelectTrigger>
-										<SelectContent>
-											{categories?.data?.map((category) => (
-												<SelectItem
-													key={category.documentId}
-													value={String(category.id)}
-												>
-													{category?.name}
-												</SelectItem>
-											))}
-										</SelectContent>
-									</Select>
-								)}
-							/>
-						)}
+										<SelectValue />
+									</SelectTrigger>
+									<SelectContent>
+										{categories?.data?.map((category) => (
+											<SelectItem
+												key={category.documentId}
+												value={String(category.id)}
+											>
+												{category?.name}
+											</SelectItem>
+										))}
+									</SelectContent>
+								</Select>
+							)}
+						/>
 						{errors.category && (
 							<p role="alert" className="-mt-1 text-destructive">
 								{errors.category.message}

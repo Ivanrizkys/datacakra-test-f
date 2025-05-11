@@ -117,7 +117,7 @@ export default function ArticleDetailPage() {
 							className="flex flex-col items-center justify-center h-24 border-gray-700 hover:bg-primary-foreground"
 							onClick={() => {
 								window.open(
-									`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`,
+									`https://m.facebook.com/sharer.php?u=${encodeURIComponent(window.location.href)}`,
 									"_blank",
 								);
 							}}
