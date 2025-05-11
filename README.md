@@ -3,10 +3,10 @@
 ## Overview
 This is article management dashboard build with React - Typesctript and ShadcnUI. Created to follow the recruitment process at Datacakra.
 
-![Application screenshot](https://res.cloudinary.com/draaoe7rc/image/upload/v1746885721/test/45e3a83e-1c26-44a2-a02c-0dd340638528.png)
+![Application screenshot](https://res.cloudinary.com/draaoe7rc/image/upload/v1746935782/test/d6d5bc6a-0b6f-4b82-bcba-07000935227c.png)
 
 <div align="center">
-<a href="https://">Live Preview</a>
+<a href="https://peaceful-naiad-36244f.netlify.app/">Live Preview</a>
 </div>
 
 ## Features
