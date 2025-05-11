@@ -60,13 +60,18 @@ export default function TopBar({ listMenu }: TopBarProps) {
 
 	return (
 		<header className="sticky z-10 top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
-			<nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+			<nav className="hidden flex-col text-lg font-medium md:flex md:flex-row md:items-center md:text-sm gap-3">
 				<Link
 					to="/dashboard/article"
 					className="flex items-center gap-2 text-lg font-semibold md:text-base"
 				>
-					<Newspaper className="h-6 w-6" />
-					<span className="sr-only">Travel App</span>
+					<span
+						className="text-xl font-bold bg-primary text-primary-foreground w-7 h-7 flex items-center justify-center rounded"
+						aria-hidden="true"
+					>
+						A
+					</span>
+					<span className="sr-only">Article</span>
 				</Link>
 				{listMenu.map((menu) => (
 					<Link
@@ -97,7 +102,7 @@ export default function TopBar({ listMenu }: TopBarProps) {
 							className="flex items-center gap-2 text-lg font-semibold"
 						>
 							<Package2 className="h-6 w-6" />
-							<span className="sr-only">Travel App</span>
+							<span className="sr-only">Article</span>
 						</Link>
 						{listMenu.map((menu) => (
 							<Link
@@ -129,8 +134,6 @@ export default function TopBar({ listMenu }: TopBarProps) {
 						</Button>
 					</DropdownMenuTrigger>
 					<DropdownMenuContent align="end">
-						<DropdownMenuLabel>Settings</DropdownMenuLabel>
-						<DropdownMenuSeparator />
 						<DropdownMenuSub>
 							<DropdownMenuSubTrigger>
 								<span>Theme</span>
