@@ -48,7 +48,7 @@ pnpm install
    ```
 2. Edit the `.env` file and adjust it to your environment configuration:
    ```
-   VITE_BASE_API_URL=your-base-api-key
+   VITE_BASE_API_URL=your-base-api-url
    ...
    ```
 
