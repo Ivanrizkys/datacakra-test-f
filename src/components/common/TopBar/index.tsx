@@ -3,7 +3,6 @@ import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
-	DropdownMenuLabel,
 	DropdownMenuPortal,
 	DropdownMenuSeparator,
 	DropdownMenuSub,
@@ -17,15 +16,7 @@ import { cn } from "@/lib/utils";
 import { useTheme } from "@/providers/ThemeProviders";
 import { useQueryClient } from "@tanstack/react-query";
 import Cookies from "js-cookie";
-import {
-	CircleUser,
-	Laptop,
-	Menu,
-	Moon,
-	Newspaper,
-	Package2,
-	Sun,
-} from "lucide-react";
+import { CircleUser, Laptop, Menu, Moon, Package2, Sun } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { toast } from "sonner";
 
