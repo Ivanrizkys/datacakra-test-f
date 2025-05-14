@@ -30,8 +30,8 @@ This is article management dashboard build with React - Typesctript and ShadcnUI
 ### Step 1: Clone Repository
 
 ```bash
-git clone http://codehub.gps.id/webapps/subscription/frontend-new-v2.git
-cd frontend-new-v2
+git clone https://github.com/Ivanrizkys/datacakra-test-f
+cd datacakra-test-f
 ```
 
 ### Step 2: Install Dependencies
